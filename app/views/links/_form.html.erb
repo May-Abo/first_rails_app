@@ -1,0 +1,26 @@
+<% if @link.errors.any? %>
+<h3>The following errors prevented the link from saving</h3>
+<ul>
+  <% @link.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @link do |f| %>
+
+  <p>
+      <%= f.label :URL %><br />
+      <%= f.text_field :url %> 
+  </p>
+  <p>
+    <%= f.label :Short %> <br />
+    <%= f.text_area :slug %>  
+  </p>
+  <p>
+   <%= f.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to "Back to all link", links_path %>

@@ -19,7 +19,6 @@ class ArticlesController < ApplicationController
     else
       render 'new'
     end
-    
   end
   
   def show

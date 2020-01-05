@@ -1,0 +1,25 @@
+<h1>All links</h1>
+
+<p>
+  <%= link_to "Create new link", new_link_path %>
+</p>
+
+<table>
+    <tr>
+        <th>URL</th>
+        <th>Short URL</th>
+        <th>Number of visits</th>
+    </tr>
+    
+    <% @links.each do |link| %>
+    <tr>
+        <td><%= link.url %></td>
+        <td><%= link.slug %></td>
+        <td><%= link.clicked %></td>
+        <th><%= link_to "View", short_path(link.slug) %></th>
+        <th><%= link_to "Show", link_path(link) %></th>
+        <th><%= link_to "Edit", edit_link_path(link) %></th>
+        <th><%= link_to "Delete", link_path(link), method: :delete, data: {confirm: "Are you Sure?"} %></th>
+    </tr>
+    <% end %>
+</table>

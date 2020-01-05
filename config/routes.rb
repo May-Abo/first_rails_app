@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get 'about', to: 'welcome#about'
   
+  get '/s/:slug', to: 'links#view', as: :short
+  
   resources :articles
+  resources :links
   
 end

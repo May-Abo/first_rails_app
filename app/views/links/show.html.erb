@@ -1,0 +1,14 @@
+<h1>Show the selected link</h1>
+
+<p>
+    URL: <%= @link.url %>
+</p>
+<p>
+    Short URL: <%= @link.slug %>
+</p>
+<p>
+    Number of visits: <%= @link.clicked %>
+</p>
+
+<th><%= link_to "Edit this link", edit_link_path(@link) %></th> | 
+<th><%= link_to "Back to all links", links_path %><th> 
